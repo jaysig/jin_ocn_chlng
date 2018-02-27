@@ -33,6 +33,7 @@ class ContIn extends Component {
   }
 
   render() {
+    console.log('test');
     return (
       <PresIn
         textChange=this.onTextChange
