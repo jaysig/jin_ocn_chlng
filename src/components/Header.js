@@ -1,18 +1,24 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
+import _ from 'lodash'
 
 export default class Header extends Component {
 
   clicker(event){
     let id = event.target.id;
     console.log(event.target.id,'ider');
-    if (id === "out") {
-      document.getElementById("out").classList.add("active")
-      document.getElementById("in").classList.remove("active")
+    if (id === "contout") {
+      document.getElementById("contout").classList.add("active")
+      document.getElementById("contin").classList.remove("active")
     } else {
-      document.getElementById("in").classList.add("active")
-      document.getElementById("out").classList.remove("active")
+      document.getElementById("contin").classList.add("active")
+      document.getElementById("contout").classList.remove("active")
     }
+  }
+
+  componentDidMount() {
+    let location = _.last(window.location.href.split("/"));
+    document.getElementById(location).classList.add("active")
   }
 
   render() {
@@ -22,10 +28,10 @@ export default class Header extends Component {
           <ul className="content">
             <div>
               <li>
-                <Link id="out" to='/contout' onClick={this.clicker}>ContOut</Link>
+                <Link id="contout" to='/contout' onClick={this.clicker}>ContOut</Link>
               </li>
               <li>
-                <Link className="active" id="in" to='/contin' onClick={this.clicker}>ContIn</Link>
+                <Link id="contin" to='/contin' onClick={this.clicker}>ContIn</Link>
               </li>
             </div>
           </ul>
