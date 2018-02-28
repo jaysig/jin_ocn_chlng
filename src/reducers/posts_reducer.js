@@ -8,8 +8,8 @@ const posts = (state = [], action) => {
       return [
         ...state,
         {
-          value: action.stored_value,
-          selected: action.stored_selection,
+          value: action.text.stored_value,
+          selected: action.text.stored_selection,
         }
       ]
     default:
