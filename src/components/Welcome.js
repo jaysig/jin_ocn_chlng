@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router'
-import logo from '../logo.svg';
+import React from 'react';
 import '../App.css';
+import Header from './Header';
 
 const Welcome = (props) => {
   return (
     <div className="container">
+      <Header />
       {props.children}
     </div>
   );
