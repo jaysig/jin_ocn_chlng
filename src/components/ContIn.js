@@ -29,6 +29,10 @@ class ContIn extends Component {
       this.state.stored_selection.push(event.target.value)
     }
   }
+  headerUpdate() {
+    document.getElementById("contout").classList.add("active")
+    document.getElementById("contin").classList.remove("active")
+  }
 
   onFormSubmit(event) {
     event.preventDefault();
@@ -44,6 +48,7 @@ class ContIn extends Component {
         formSubmit={this.onFormSubmit}
         value={this.state.stored_value}
         selection={this.state.stored_selection}
+        header={this.headerUpdate}
       />
 
     )

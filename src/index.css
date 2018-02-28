@@ -15,6 +15,16 @@ div {
   margin-bottom: 10px;
 }
 
+textarea, select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
 .maxW {
   padding-left: 20%;
   padding-right: 20%;
@@ -49,4 +59,33 @@ div {
 .active {
     background-color: #f8cf48;
     color: black;
+}
+
+.greeting {
+  text-align: center;
+}
+.greeting a{
+  text-decoration: none;
+}
+#posts {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#posts td, #posts th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#posts tr:nth-child(even){background-color: #f2f2f2;}
+
+#posts tr:hover {background-color: #ddd;}
+
+#posts th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: blue;
+    color: white;
 }
