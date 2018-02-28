@@ -6,7 +6,6 @@ export default class Header extends Component {
 
   clicker(event){
     let id = event.target.id;
-    console.log(event.target.id,'ider');
     if (id === "contout") {
       document.getElementById("contout").classList.add("active")
       document.getElementById("contin").classList.remove("active")
@@ -28,10 +27,10 @@ export default class Header extends Component {
           <ul className="content">
             <div>
               <li>
-                <Link id="contout" to='/contout' onClick={this.clicker}>ContOut</Link>
+                <Link id="contout" to='/contout' onClick={this.clicker}>Charcter List</Link>
               </li>
               <li>
-                <Link id="contin" to='/contin' onClick={this.clicker}>ContIn</Link>
+                <Link id="contin" to='/contin' onClick={this.clicker}>Character Form</Link>
               </li>
             </div>
           </ul>

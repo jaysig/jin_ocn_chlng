@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import './index.css';
-// import App from './App';
+
 import registerServiceWorker from './registerServiceWorker';
-import { Router, Route, hashHistory } from 'react-router';
+import { Router, Route, hashHistory, IndexRedirect } from 'react-router';
 import promise from 'redux-promise';
 import reducers from './reducers';
 
@@ -19,8 +19,9 @@ const Root = () => {
     <Provider store={ createStoreWithMiddleware(reducers) }>
       <Router history={hashHistory}>
         <Route path="/" component={ Welcome} >
+          <IndexRedirect to="/contin" />
           <Route path="contin" component={ ContIn } />
-          {/* <Route path="/contout" component={ ContOut }></Route> */}
+          <Route path="/contout" component={ ContOut }></Route>
         </Route>
       </Router>
     </Provider>
