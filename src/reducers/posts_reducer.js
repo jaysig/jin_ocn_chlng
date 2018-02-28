@@ -1,14 +1,20 @@
-import { FETCH_POSTS, FETCH_POST } from '../actions/index';
+import { ADD_POST, FETCH_POST } from '../actions/index';
 
-const INITIAL_STATE = { all: [], post: null, };
+// const INITIAL_STATE = { all: [], post: null, };
 
-export default function (state = INITIAL_STATE, action) {
+const posts = (state = [], action) => {
   switch (action.type) {
-    case FETCH_POST:
-      return { ...state, post: action.payload.data  };
-    case FETCH_POSTS:
-      return { ...state, all: action.payload.data  };
+    case ADD_POST:
+      return [
+        ...state,
+        {
+          value: action.stored_value,
+          selected: action.stored_selection,
+        }
+      ]
     default:
-      return state;
+      return state
   }
 }
+ 
+export default posts
