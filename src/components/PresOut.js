@@ -4,13 +4,12 @@ import { TablePagination } from 'react-pagination-table';
 
 let PresOut = (props) => {
   return (
-  // Have a table
   <div>
     <table id="posts">
       <thead>
         <tr>
-          <th>Stored Value</th>
-          <th>Stored Selection</th>
+          <th>Character's Story</th>
+          <th>Chacter's Favorite #'s'</th>
         </tr>
       </thead>
       <tbody>
@@ -25,25 +24,16 @@ let PresOut = (props) => {
         })}
       </tbody>
     </table>
-    {/* {_.each(props.data, (arr, i) => {
-      console.log(arr,i, 'check');
-      return (
-        <button key={i}>{i}</button>
-      )
-    })} */}
     <h3>Page #</h3>
     {props.length.map((input, i) => {
-      // Create new row per each level of data
+      // Create new button for every 10 inputs
       return (
         <button key={i} id={i} onClick={props.pageShift}>{i}</button>
       )
     })}
   </div>
 
-  // Create paginated view of ten values per page
   )
 }
-
-// Add redux
 
 export default PresOut;
