@@ -1,9 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import Index from './index';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+describe('ContIn', () => {
+  describe('onFormSubmit()', () => {
+    it('should submit form data to action creator', (done) => {
+      //
+      });
+    });
+  });
+});
+
+describe('ContOut', () => {
+  describe('pageShift()', () => {
+    it('should update the ContOut State', (done) => {
+      //
+      });
+    });
+  });
 });
