@@ -1,29 +1,47 @@
 import React from 'react';
+import _ from 'lodash';
+import { TablePagination } from 'react-pagination-table';
 
-let PresIn = (props) => {
+let PresOut = (props) => {
+  return (
   // Have a table
-  <table>
-    <thead>
-      <tr>
-        <th>Stored Value</th>
-        <th>Stored Selection</th>
-      </tr>
-    </thead>
-    <tbody>
-        {/* // Map over data that comes from user inputs  */}
-      {props.inputeddata.map((input), => {
+  <div>
+    <table id="posts">
+      <thead>
+        <tr>
+          <th>Stored Value</th>
+          <th>Stored Selection</th>
+        </tr>
+      </thead>
+      <tbody>
+        {props.data.map((input, i) => {
           // Create new row per each level of data
-        return (
-          <tr>
-            <td>{input.value}</td>
-            <td>{input.selected}</td>
-          </tr>
-        )
-      })}
-    </tbody>
-  </table>
+          return (
+            <tr key={i}>
+              <td>{input.value}</td>
+              <td>{input.selected}</td>
+            </tr>
+          )
+        })}
+      </tbody>
+    </table>
+    {/* {_.each(props.data, (arr, i) => {
+      console.log(arr,i, 'check');
+      return (
+        <button key={i}>{i}</button>
+      )
+    })} */}
+    <h3>Page #</h3>
+    {props.length.map((input, i) => {
+      // Create new row per each level of data
+      return (
+        <button key={i} id={i} onClick={props.pageShift}>{i}</button>
+      )
+    })}
+  </div>
 
   // Create paginated view of ten values per page
+  )
 }
 
 // Add redux
