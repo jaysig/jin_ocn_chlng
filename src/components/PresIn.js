@@ -4,16 +4,20 @@ import { Field, reduxForm } from 'redux-form'
 import Multiselect from 'react-widgets/lib/Multiselect'
 import 'react-widgets/dist/css/react-widgets.css'
 
-let PresIn = props => {
-  const { pristine, reset, submitting } = props
+let PresIn = (props) => {
+  const {formSubmit, textChange, selectionChange, value, selection } = props
+  console.log(value, selection, 'check');
+  console.log(props, 'properties1');
+  // console.log(input,'this');
   return (
-    <form onSubmit={props.onFormSubmit}>
+    <form onSubmit={formSubmit.bind(this)}>
       <div>
         <label>Value</label>
         <Field
           name="value"
+          value={value}
           component="textarea"
-          onChange={props.onTextChange}
+          onChange={textChange}
         />
       </div>
       <div className="maxW">
@@ -23,20 +27,19 @@ let PresIn = props => {
           component={Multiselect}
           defaultValue={[]}
           onBlur={() => props.onBlur()}
-          onChange={props.onSelectionChange}
+          onChange={selectionChange}
           data={['one', 'two', 'three', 'four', 'five']}/>
       </div>
       <div>
-        <button type="submit" disabled={pristine || submitting}>Submit</button>
-        <button type="button" disabled={pristine || submitting} onClick={reset}>Reset Values
-        </button>
+        <button type="submit">Submit</button>
       </div>
     </form>
   )
 }
 
 PresIn = reduxForm({
-  form: 'presIn'
+  form: 'presIn',
+  propNamespace: 'containerProps'
 })(PresIn)
 
 export default PresIn

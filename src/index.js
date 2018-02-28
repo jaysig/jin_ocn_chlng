@@ -5,13 +5,13 @@ import { createStore, applyMiddleware } from 'redux';
 import './index.css';
 // import App from './App';
 import registerServiceWorker from './registerServiceWorker';
-import { Router, Route, IndexRoute, hashHistory } from 'react-router';
+import { Router, Route, hashHistory } from 'react-router';
 import promise from 'redux-promise';
 import reducers from './reducers';
 
 import Welcome from './components/Welcome';
-import ContIn from './components/PresIn';
-import ContOut from './components/PresOut';
+import ContIn from './components/ContIn';
+import ContOut from './components/ContOut';
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 const Root = () => {

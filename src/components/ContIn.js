@@ -19,26 +19,29 @@ class ContIn extends Component {
   }
 
   onTextChange(event) {
-    this.setState({ stored_value: event.target. value });
+    this.setState({ stored_value: event.target.value });
   }
 
   onSelectionChange(event) {
-    this.setState({ stored_selection: event.target. value });
+    console.log(event.target,'selected');
+    this.setState({ stored_selection: event.target.value });
   }
 
   onFormSubmit(event) {
+    console.log(event);
     event.preventDefault();
     // this.props.   TODO:Add function
     this.setState({stored_value: '', stored_selection: ''})
   }
 
   render() {
-    console.log('test');
     return (
       <PresIn
-        textChange=this.onTextChange
-        selectionChange=this.onSelectionChange
-        formSubmit=this.onFormSubmit
+        textChange={this.onTextChange}
+        selectionChange={this.onSelectionChange}
+        formSubmit={this.onFormSubmit}
+        value={this.state.stored_value}
+        selection={this.state.stored_selection}
       />
 
     )
